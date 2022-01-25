@@ -7,14 +7,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: okteto/context@latest
-      with:
-        token: ${{ secrets.OKTETO_TOKEN }}
 
-      - name: Build
-        uses: okteto/build@tere/add-global-flag
-        with:
-          global: true
-        env:
-          OKTETO_GIT_COMMIT: ${{ github.sha }}
-          OKTETO_ENABLE_MANIFEST_V2: true
+    - uses: okteto/context@latest
+    with:
+      token: ${{ secrets.OKTETO_TOKEN }}
+
+    - name: Build
+      uses: okteto/build@tere/add-global-flag
+      with:
+        global: true
+      env:
+        OKTETO_GIT_COMMIT: ${{ github.sha }}
+        OKTETO_ENABLE_MANIFEST_V2: true
