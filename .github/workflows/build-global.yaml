@@ -9,6 +9,7 @@ jobs:
       - uses: okteto/context@latest
         with:
           token: ${{ secrets.OKTETO_TOKEN }}
+          url: ${{ secrets.OKTETO_URL }}
 
       - name: Build
         uses: okteto/build@tere/add-global-flag
