@@ -14,7 +14,6 @@ jobs:
       - name: Build
         uses: okteto/build@tere/add-global-flag
         with:
-          file: okteto.yaml
           global: true
         env:
           OKTETO_GIT_COMMIT: ${{ github.sha }}
