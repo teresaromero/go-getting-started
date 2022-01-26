@@ -1,4 +1,7 @@
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 name: Build to Global Registry
 
@@ -11,7 +14,7 @@ jobs:
           token: ${{ secrets.OKTETO_TOKEN }}
           url: ${{ secrets.OKTETO_URL }}
 
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@master
 
       - name: Build
