@@ -5,7 +5,8 @@ deploy:
   - curl -o gcloud https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-404.0.0-linux-x86_64.tar.gz
   - tar -xf gcloud
   - ./google-cloud-sdk/install.sh --screen-reader=true
-  - ./google-cloud-sdk/bin/gcloud init
+  - echo $GCP_KEY > keyfile.json
+  - ./google-cloud-sdk/bin/gcloud auth activate-service-account --key-file=keyfile.json
   - gcloud storage buckets create gs://go-getting-started --project=${PROJECT}
 
 destroy:
