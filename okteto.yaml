@@ -2,4 +2,7 @@ build:
   app:
     context: .
 deploy:
-  - helm upgrade --install hello-world chart --set app.image=${build.app.image}
+  - gcloud storage buckets create gs://go-getting-started --project=${PROJECT}
+
+destroy:
+  - gcloud storage rm --recursive gs://go-getting-started
