@@ -2,8 +2,8 @@ build:
   app:
     context: .
 deploy:
-  - curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-404.0.0-linux-x86_64.tar.gz
-  - tar -xf google-cloud-cli-404.0.0-linux-x86.tar.gz
+  - curl -o gcloud https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-404.0.0-linux-x86_64.tar.gz
+  - tar -xf gcloud
   - ./google-cloud-sdk/install.sh --screen-reader=true
   - ./google-cloud-sdk/bin/gcloud init
   - gcloud storage buckets create gs://go-getting-started --project=${PROJECT}
