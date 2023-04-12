@@ -1,9 +1,9 @@
 build:
   hello-world:
-    image: okteto.dev/go-hello-world:1.0.0
     context: .
 
 deploy:
+  - curl -v https://test.teresa.dev.okteto.net
   - kubectl apply -f k8s.yml
 
 dev:
