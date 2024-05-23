@@ -1,0 +1,20 @@
+on: [push]
+
+name: Deploy Preview with debug logs
+
+jobs:
+
+  devflow:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Context
+      uses: okteto/context@latest
+      with:
+        url: ${{ secrets.OKTETO_URL }}
+        token: ${{ secrets.OKTETO_TOKEN }}
+
+    - name: "Deploy the preview environment"
+      uses: okteto/deploy-preview@3cb8380
+      with:
+        name: dev-previews
+        debug: true
