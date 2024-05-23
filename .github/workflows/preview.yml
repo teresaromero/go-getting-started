@@ -17,4 +17,3 @@ jobs:
       uses: okteto/deploy-preview@3cb83809ff0c2b4666bf753cdad8e12e48553b96
       with:
         name: dev-previews
-        debug: true
