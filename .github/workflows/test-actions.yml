@@ -13,8 +13,14 @@ jobs:
         url: ${{ secrets.OKTETO_URL }}
         token: ${{ secrets.OKTETO_TOKEN }}
 
-    - name: "Deploy the preview environment"
+    - name: "Okteto Deploy Preview Action"
       uses: okteto/deploy-preview@a0d66816a35be82253a73d46861a511a8ad61da9
       with:
         name: teresaromero-preview
-        log-level: pepe
+        log-level: info
+    
+    - name: "Okteto Delete Namespace Action"
+      uses: okteto/delete-namespace@73e1c6d272bf53f9f2271189d8eed04630b957b4
+      with:
+        namespace: teresaromero-namespace
+        log-level: info
