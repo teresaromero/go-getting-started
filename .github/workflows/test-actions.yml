@@ -1,6 +1,6 @@
 on: [push]
 
-name: Deploy Preview with debug logs
+name: Test okteto actions log-level
 
 jobs:
 
@@ -17,10 +17,16 @@ jobs:
       uses: okteto/deploy-preview@a0d66816a35be82253a73d46861a511a8ad61da9
       with:
         name: teresaromero-preview
-        log-level: info
+        log-level: warn
     
+    - name: "Okteto Create Namespace Action"
+      uses: okteto/create-namespace@a232047526d8f5f5fee3342949ae2e63f4ff4d21
+      with:
+        namespace: teresaromero-action-ns
+        log-level: warn
+
     - name: "Okteto Delete Namespace Action"
       uses: okteto/delete-namespace@73e1c6d272bf53f9f2271189d8eed04630b957b4
       with:
-        namespace: teresaromero-namespace
-        log-level: info
+        namespace: teresaromero-action-ns
+        log-level: warn
