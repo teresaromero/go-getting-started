@@ -32,6 +32,12 @@ jobs:
         namespace: teresaromero-action-ns
         log-level: warn
 
+    - name: "Okteto Namespace Action"
+      uses: okteto/namespace@b7824ae8a99d415b3defa4cad695e374627f01d6
+      with:
+        namespace: teresaromero-teresaromero
+        log-level: warn
+
     - name: "Okteto Delete Namespace Action"
       uses: okteto/delete-namespace@73e1c6d272bf53f9f2271189d8eed04630b957b4
       with:
