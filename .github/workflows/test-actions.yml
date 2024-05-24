@@ -19,8 +19,14 @@ jobs:
         name: teresaromero-preview
         log-level: warn
     
+    - name: "Okteto Destroy Preview Action"
+      uses: okteto/destroy-preview@3f45e628352325d94d728e4207699c75b51340bc
+      with:
+        name: teresaromero-preview
+        log-level: warn
+    
     - name: "Okteto Create Namespace Action"
-      uses: okteto/create-namespace@a232047526d8f5f5fee3342949ae2e63f4ff4d21
+      uses: okteto/create-namespace@d420f34a7fea85baaf3d111b6b3a2477c102ad85
       with:
         namespace: teresaromero-action-ns
         log-level: warn
