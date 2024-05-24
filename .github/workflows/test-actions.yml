@@ -8,10 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Context
-      uses: okteto/context@latest
+      uses: okteto/context@cb3a59a25486a67dffd6c1d3a590c1c405c43d39
       with:
         url: ${{ secrets.OKTETO_URL }}
         token: ${{ secrets.OKTETO_TOKEN }}
+        log-level: warn
 
     - name: "Okteto Deploy Preview Action"
       uses: okteto/deploy-preview@a0d66816a35be82253a73d46861a511a8ad61da9
