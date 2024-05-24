@@ -16,5 +16,5 @@ jobs:
     - name: "Deploy the preview environment"
       uses: okteto/deploy-preview@a0d66816a35be82253a73d46861a511a8ad61da9
       with:
-        name: dev-previews
-        log-level: info
+        name: teresaromero-preview
+        log-level: pepe
