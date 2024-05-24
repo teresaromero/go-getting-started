@@ -56,6 +56,11 @@ jobs:
         name: teresaromero-pipeline
         log-level: warn
 
+    - name: "Okteto Pipeline Action"
+      uses: okteto/destroy-pipeline@8a6b388c78734478694c3296968a28830b3734b1
+      with:
+        name: teresaromero-pipeline
+        log-level: warn
 
 
         # destroy-pipeline
