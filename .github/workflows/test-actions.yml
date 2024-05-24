@@ -31,7 +31,7 @@ jobs:
       with:
         namespace: teresaromero-action-ns
         log-level: warn
-
+    
     - name: "Okteto Namespace Action"
       uses: okteto/namespace@b7824ae8a99d415b3defa4cad695e374627f01d6
       with:
@@ -44,14 +44,19 @@ jobs:
         namespace: teresaromero-action-ns
         log-level: warn
 
-    - name: "Okteto Build Action"
-      uses: okteto/build@c466eb2cbdbff91cbd954dbaea7b429402e706be
-      with:
-        tag: okteto.dev/go-getting-started
-        log-level: warn
+    # - name: "Okteto Build Action"
+    #   uses: okteto/build@c466eb2cbdbff91cbd954dbaea7b429402e706be
+    #   with:
+    #     tag: okteto.dev/go-getting-started
+    #     log-level: warn
 
     - name: "Okteto Pipeline Action"
       uses: okteto/pipeline@855e283a35ba2dc775f1977b26f8359443c150db
       with:
         name: teresaromero-pipeline
         log-level: warn
+
+
+
+        # destroy-pipeline
+        # test
