@@ -37,3 +37,9 @@ jobs:
       with:
         namespace: teresaromero-action-ns
         log-level: warn
+
+    - name: "Okteto Build Action"
+      uses: okteto/build@1543ea05070c3e5be32ed47bb6f1744125827e80
+      with:
+        tag: okteto.dev/go-getting-started
+        log-level: warn
