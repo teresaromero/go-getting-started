@@ -14,7 +14,7 @@ jobs:
         token: ${{ secrets.OKTETO_TOKEN }}
 
     - name: "Deploy the preview environment"
-      uses: okteto/deploy-preview@122b2108463b7ef4ac11f86796730b5c1facf39c
+      uses: okteto/deploy-preview@a0d66816a35be82253a73d46861a511a8ad61da9
       with:
         name: dev-previews
-        log-level: debug
+        log-level: info
