@@ -63,6 +63,6 @@ jobs:
         log-level: warn
 
     - name: "Okteto Test Action"
-      uses: okteto/test@9aa74c082d6f32acb658a71f0fa8933c14fccd92
+      uses: okteto/test@934839dfc81c53a50d898e27c9e9277f416b8cfb
       with:
         log-level: warn
