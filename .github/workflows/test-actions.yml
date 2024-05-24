@@ -49,3 +49,9 @@ jobs:
       with:
         tag: okteto.dev/go-getting-started
         log-level: warn
+
+    - name: "Okteto Pipeline Action"
+      uses: okteto/pipeline@855e283a35ba2dc775f1977b26f8359443c150db
+      with:
+        name: teresaromero-pipeline
+        log-level: warn
