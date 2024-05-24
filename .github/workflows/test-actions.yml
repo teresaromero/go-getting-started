@@ -15,10 +15,10 @@ jobs:
         log-level: warn
 
     - name: "Okteto Deploy Preview Action"
-      uses: okteto/deploy-preview@a0d66816a35be82253a73d46861a511a8ad61da9
+      uses: okteto/deploy-preview@2b610191d2ba04ef6cf7b82a782c1d71ca69ec13
       with:
         name: teresaromero-preview
-        log-level: warn
+        log-level: invalid
     
     - name: "Okteto Destroy Preview Action"
       uses: okteto/destroy-preview@3f45e628352325d94d728e4207699c75b51340bc
