@@ -39,7 +39,7 @@ jobs:
         log-level: warn
 
     - name: "Okteto Build Action"
-      uses: okteto/build@1543ea05070c3e5be32ed47bb6f1744125827e80
+      uses: okteto/build@c466eb2cbdbff91cbd954dbaea7b429402e706be
       with:
         tag: okteto.dev/go-getting-started
         log-level: warn
