@@ -1,6 +1,6 @@
 on: [push]
 
-name: Test okteto actions log-level (warn)
+name: Test okteto actions log-level (default)
 
 jobs:
 
