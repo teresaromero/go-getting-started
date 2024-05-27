@@ -1,0 +1,88 @@
+on: [push]
+
+name: Test okteto actions log-level (default)
+
+jobs:
+
+  previews:
+    runs-on: ubuntu-latest
+    steps:
+  
+    - name: "Context"
+      uses: okteto/context@641ddbc0d1127d2cd57624aa5d4ed8f248d12c14
+      with:
+        url: ${{ secrets.OKTETO_URL }}
+        token: ${{ secrets.OKTETO_TOKEN }}
+
+    - name: "Okteto Deploy Preview"
+      uses: okteto/deploy-preview@4d454b837d4c37c89d6729fbaac3c49588ec6611
+      with:
+        name: teresaromero-preview
+    
+    - name: "Okteto Destroy Preview"
+      uses: okteto/destroy-preview@5858882307386f173e78c77523513846c8aeefd4
+      with:
+        name: teresaromero-preview
+  
+  namespace:
+    runs-on: ubuntu-latest
+    steps:
+  
+    - name: "Context"
+      uses: okteto/context@641ddbc0d1127d2cd57624aa5d4ed8f248d12c14
+      with:
+        url: ${{ secrets.OKTETO_URL }}
+        token: ${{ secrets.OKTETO_TOKEN }}
+
+    - name: "Okteto Create Namespace"
+      uses: okteto/create-namespace@1eff4ae01ec3edc55475c63a2013da20b8253533
+      with:
+        namespace: teresaromero-action-ns
+    
+    - name: "Okteto Namespace"
+      uses: okteto/namespace@faefd8be7992db3c56f2f508592a998ac7f1a770
+      with:
+        namespace: teresaromero-teresaromero
+
+    - name: "Okteto Delete Namespace"
+      uses: okteto/delete-namespace@aa747cff1e1c16e0b4301ce4266cddd04dec31f3
+      with:
+        namespace: teresaromero-action-ns
+
+  pipeline:
+    runs-on: ubuntu-latest
+    steps:
+  
+    - name: "Context"
+      uses: okteto/context@641ddbc0d1127d2cd57624aa5d4ed8f248d12c14
+      with:
+        url: ${{ secrets.OKTETO_URL }}
+        token: ${{ secrets.OKTETO_TOKEN }}
+    
+    - name: "Okteto Pipeline"
+      uses: okteto/pipeline@91e0e5a36daebcfb8375ed15b03c4898ea42cca1
+      with:
+        name: teresaromero-pipeline
+
+    - name: "Okteto Destroy Pipeline"
+      uses: okteto/destroy-pipeline@9444147b6f51e71ba5e40e9eaf4f325a39251c5f
+      with:
+        name: teresaromero-pipeline
+
+  other:
+    runs-on: ubuntu-latest
+    steps:
+  
+    - name: "Context"
+      uses: okteto/context@641ddbc0d1127d2cd57624aa5d4ed8f248d12c14
+      with:
+        url: ${{ secrets.OKTETO_URL }}
+        token: ${{ secrets.OKTETO_TOKEN }}
+      
+    - name: "Okteto Test Action"
+      uses: okteto/test@f0c9826b80b4b79270f2a663673c5219d6886967
+
+    - name: "Okteto Build Action"
+      uses: okteto/build@2cc5a4bd48b0d9f70c67e48586fc437395dbd8bd
+      with:
+        tag: okteto.dev/go-getting-started
