@@ -80,6 +80,9 @@ jobs:
   other:
     runs-on: ubuntu-latest
     steps:
+
+    - name: checkout
+      uses: actions/checkout@master    
   
     - name: "Context"
       uses: okteto/context@641ddbc0d1127d2cd57624aa5d4ed8f248d12c14
