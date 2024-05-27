@@ -94,6 +94,7 @@ jobs:
       uses: okteto/test@079953c7f7a9f32a6229fdc2d614d3a2b2bf812a
       with:
         log-level: warn
+        tests: unit integration
 
     # - name: "Okteto Build Action"
     #   uses: okteto/build@2cc5a4bd48b0d9f70c67e48586fc437395dbd8bd
