@@ -91,7 +91,9 @@ jobs:
         token: ${{ secrets.OKTETO_TOKEN }}
       
     - name: "Okteto Test Action"
-      uses: okteto/test@710aaf62fa42f7dcdb5db8d406e92b27b0995811
+      uses: okteto/test@c819a6246004f1605c362811e3344711fd36e3b6
+      with:
+        log-level: warn
 
     # - name: "Okteto Build Action"
     #   uses: okteto/build@2cc5a4bd48b0d9f70c67e48586fc437395dbd8bd
