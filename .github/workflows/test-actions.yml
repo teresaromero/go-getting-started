@@ -90,10 +90,11 @@ jobs:
         url: ${{ secrets.OKTETO_URL }}
         token: ${{ secrets.OKTETO_TOKEN }}
       
-    - name: "Okteto Test Action"
-      uses: okteto/test@079953c7f7a9f32a6229fdc2d614d3a2b2bf812a
-    # - name: "Okteto Build Action"
-    #   uses: okteto/build@2cc5a4bd48b0d9f70c67e48586fc437395dbd8bd
-    #   with:
-    #     tag: okteto.dev/go-getting-started
-    #     log-level: warn
+    # - name: "Okteto Test Action"
+    #   uses: okteto/test@079953c7f7a9f32a6229fdc2d614d3a2b2bf812a
+
+    - name: "Okteto Build Action"
+      uses: okteto/build@2cc5a4bd48b0d9f70c67e48586fc437395dbd8bd
+      with:
+        tag: okteto.dev/go-getting-started
+        log-level: warn
