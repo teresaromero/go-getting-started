@@ -19,5 +19,6 @@ dev:
 
 test:
   unit:
+    image: okteto/golang:1
     commands:
-      - go test
+      - go test ./...
