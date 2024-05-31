@@ -1,6 +1,6 @@
 on: [push]
 
-name: Test okteto actions log-level (with invalid log-level)
+name: Test okteto actions log-level (with no log-level)
 
 jobs:
 
@@ -16,19 +16,16 @@ jobs:
       with:
         url: ${{ secrets.OKTETO_URL }}
         token: ${{ secrets.OKTETO_TOKEN }}
-        log-level: invalid
 
     - name: "Okteto Deploy Preview"
       uses: okteto/deploy-preview@0320d898498a02d40f9f844447b9e15fe591fa4f
       with:
         name: teresaromero-preview
-        log-level: invalid
     
     - name: "Okteto Destroy Preview"
       uses: okteto/destroy-preview@e532e8a6765def7e9c5206f8119e0bfff869f7ee
       with:
         name: teresaromero-preview
-        log-level: invalid
   
   namespace:
     runs-on: ubuntu-latest
@@ -47,19 +44,16 @@ jobs:
       uses: okteto/create-namespace@dc623f1a7fde96a3f2c3cc6ddae10299c879ddce
       with:
         namespace: teresaromero-action-ns
-        log-level: invalid
     
     - name: "Okteto Namespace"
       uses: okteto/namespace@93ff9921ea9b2a75e2ba13f5f120675bd75a9f97
       with:
         namespace: teresaromero-teresaromero
-        log-level: invalid
 
     - name: "Okteto Delete Namespace"
       uses: okteto/delete-namespace@8e9ce909a0db3cf95deaa3a32b2b425fa4008124
       with:
         namespace: teresaromero-action-ns
-        log-level: invalid
 
   pipeline:
     runs-on: ubuntu-latest
@@ -78,13 +72,11 @@ jobs:
       uses: okteto/pipeline@407579ef24cd05a4d6218e6b4c287828d99efdd6
       with:
         name: teresaromero-pipeline
-        log-level: invalid
 
     - name: "Okteto Destroy Pipeline"
       uses: okteto/destroy-pipeline@c666c4f24c54b1c292c6c0c6d5953b9bd95b8c7f
       with:
         name: teresaromero-pipeline
-        log-level: invalid
 
   other:
     runs-on: ubuntu-latest
@@ -101,11 +93,8 @@ jobs:
       
     - name: "Okteto Test Action"
       uses: okteto/test@9e40b10cd23e08c763ca021435abe532f92f7935
-      with:
-        log-level: invalid
         
     - name: "Okteto Build Action"
       uses: okteto/build@7c3a0349e0c2f1f5f3024ed4ae3d50e034809e40
       with:
         tag: okteto.dev/go-getting-started
-        log-level: invalid
