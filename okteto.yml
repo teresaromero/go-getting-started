@@ -16,3 +16,9 @@ dev:
           - SYS_PTRACE
     forward:
       - 2345:2345
+
+dependencies:
+  movies:
+    repository: https://github.com/okteto/movies.git
+    variables:
+      OKTETO_NAMESPACE: value 
