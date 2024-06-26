@@ -1,5 +1,10 @@
 deploy:
-  - kubectl apply -f k8s.yml
+  remote: true
+  commands:
+    - name: Clone repository
+      command: git clone https://github.com/okteto/movies
+    - name: Build images
+      command: cd movies/ && okteto build --no-cache
 
 dev:
   hello-world:
